@@ -6,7 +6,7 @@ namespace Tennis
     {
         public string GameResult()
         {
-            throw new NotImplementedException();
+            return "Love All";
         }
     }
 }
