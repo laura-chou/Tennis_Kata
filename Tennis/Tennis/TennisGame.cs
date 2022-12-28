@@ -9,6 +9,10 @@ namespace Tennis
         {
             if (_player1Score > 0)
             {
+                if (_player1Score == 2)
+                {
+                    return "Thirty Love";
+                }
                 return "Fifteen Love";
             }
             return "Love All";
