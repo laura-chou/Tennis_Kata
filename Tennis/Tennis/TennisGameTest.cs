@@ -23,18 +23,16 @@ namespace Tennis
         [Test]
         public void A02_Fifteen_Love()
         {
-            _tennis.GivePlayer1Score();
+            GivenPlayer1ScoreTimes(1);
             ResultShouldBeReturn("Fifteen Love");
         }
 
         [Test]
         public void A03_Thirty_Love()
         {
-            _tennis.GivePlayer1Score();
-            _tennis.GivePlayer1Score();
+            GivenPlayer1ScoreTimes(2);
             ResultShouldBeReturn("Thirty Love");
         }
-
 
         private void ResultShouldBeReturn(string result)
         {
@@ -42,5 +40,12 @@ namespace Tennis
             actual.Should().Be(result);
         }
 
+        private void GivenPlayer1ScoreTimes(int times)
+        {
+            for (int i = 0; i < times; i++)
+            {
+                _tennis.GivePlayer1Score();
+            }
+        }
     }
 }
