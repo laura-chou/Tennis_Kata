@@ -6,7 +6,7 @@ namespace Tennis
     [TestFixture]
     class TennisGameTest
     {
-        TennisGame _tennis;
+        private TennisGame _tennis;
 
         [SetUp]
         public void SetUp()
@@ -26,6 +26,15 @@ namespace Tennis
             _tennis.GivePlayer1Score();
             ResultShouldBeReturn("Fifteen Love");
         }
+
+        [Test]
+        public void A03_Thirty_Love()
+        {
+            _tennis.GivePlayer1Score();
+            _tennis.GivePlayer1Score();
+            ResultShouldBeReturn("Thirty Love");
+        }
+
 
         private void ResultShouldBeReturn(string result)
         {
