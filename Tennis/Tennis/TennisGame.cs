@@ -18,7 +18,7 @@ namespace Tennis
         {
             if (_player1Score > 0 || _player2Score > 0)
             {
-                return _scoreLookLike[_player1Score] + " " + _scoreLookLike[_player2Score];
+                return $"{_scoreLookLike[_player1Score]} {_scoreLookLike[_player2Score]}";
             }
 
             return _scoreLookLike[_player1Score] + " All";
