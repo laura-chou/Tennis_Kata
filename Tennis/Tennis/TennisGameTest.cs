@@ -40,6 +40,11 @@ namespace Tennis
             GivenPlayer1ScoreTimes(3);
             ResultShouldBeReturn("Forty Love");
         }
+        [Test]
+        public void A05_Love_Fifteen()
+        {
+            ResultShouldBeReturn("Love Fifteen");
+        }
 
         private void ResultShouldBeReturn(string result)
         {
