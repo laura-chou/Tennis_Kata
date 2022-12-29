@@ -16,16 +16,15 @@ namespace Tennis
         };
         public string GameResult()
         {
-            if (_player1Score > 0 || _player2Score > 0)
+            if (_player1Score == _player2Score)
             {
-                if (_player1Score == _player2Score)
+                if (_player1Score == 0)
                 {
-                    return "Deuce";
+                    return _scoreLookLike[_player1Score] + " All";
                 }
-                return $"{_scoreLookLike[_player1Score]} {_scoreLookLike[_player2Score]}";
+                return "Deuce";
             }
-
-            return _scoreLookLike[_player1Score] + " All";
+            return $"{_scoreLookLike[_player1Score]} {_scoreLookLike[_player2Score]}";
         }
 
         public void GivePlayer1Score()
