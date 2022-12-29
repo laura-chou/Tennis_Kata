@@ -62,6 +62,14 @@ namespace Tennis
             ResultShouldBeReturn("Love Forty");
         }
 
+        [Test]
+        public void A08_Deuce()
+        {
+            GivenPlayer1ScoreTimes(3);
+            GivenPlayer2ScoreTimes(3);
+            ResultShouldBeReturn("Deuce");
+        }
+
         private void ResultShouldBeReturn(string result)
         {
             var actual = _tennis.GameResult();
