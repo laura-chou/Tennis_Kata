@@ -17,6 +17,6 @@
 | 3 | 3 | Deuce |
 | 4 | 4 | Deuce |
 | 5 | 4 | Player A Advantage |
-| 5 | 3 | Player A Win |
 | 4 | 5 | Player B Advantage |
+| 5 | 3 | Player A Win |
 | 3 | 5 | Player B Win |
