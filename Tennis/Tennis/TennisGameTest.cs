@@ -11,7 +11,7 @@ namespace Tennis
         [SetUp]
         public void SetUp()
         {
-            _tennis = new TennisGame("Player A");
+            _tennis = new TennisGame("Player A", "Player B");
         }
         
         [Test]
