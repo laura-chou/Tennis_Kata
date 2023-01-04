@@ -27,16 +27,16 @@ namespace Tennis
 
         public string GameResult()
         {
-            if (_player1Score == _player2Score)
+            if (IsDeuce())
             {
-                if (_player1Score == 0)
+                if (IsPlayer1ScoreZero())
                 {
                     return _scoreLookLike[_player1Score] + " All";
                 }
                 return "Deuce";
             }
 
-            if (_player1Score >= 3 || _player2Score >= 3)
+            if (IsReadyGamePont())
             {
                 var calcScoreResult = Math.Abs(_player1Score - _player2Score);
                 var winnerPlayerName = (_player1Score > _player2Score) ? _player1Name : _player2Name;
@@ -46,14 +46,29 @@ namespace Tennis
                     { 1, "Advantage"},
                     { 2, "Win"}
                 };
-                
+
                 if (calcScoreResult < 3)
                 {
                     return $"{winnerPlayerName} {scoreResultLookLike[calcScoreResult]}";
                 }
             }
-            
+
             return $"{_scoreLookLike[_player1Score]} {_scoreLookLike[_player2Score]}";
+        }
+
+        private bool IsReadyGamePont()
+        {
+            return _player1Score >= 3 || _player2Score >= 3;
+        }
+
+        private bool IsPlayer1ScoreZero()
+        {
+            return _player1Score == 0;
+        }
+
+        private bool IsDeuce()
+        {
+            return _player1Score == _player2Score;
         }
 
         public void GivePlayer1Score()
