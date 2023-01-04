@@ -35,12 +35,20 @@ namespace Tennis
                 }
                 return "Deuce";
             }
-
-            if (_player1Score > 1 && Math.Abs(_player1Score - _player2Score) == 1)
+            if (_player1Score >= 3 || _player2Score >= 3)
             {
-                var advPlayerName = (_player1Score > _player2Score) ? _player1Name : _player2Name;
-                return $"{advPlayerName} Advantage";
+                var calcScore = Math.Abs(_player1Score - _player2Score);
+
+                switch (calcScore)
+                {
+                    case 1:
+                        var advPlayerName = (_player1Score > _player2Score) ? _player1Name : _player2Name;
+                        return $"{advPlayerName} Advantage";
+                    case 2:
+                        return $"{_player1Name} Win";
+                }
             }
+            
             return $"{_scoreLookLike[_player1Score]} {_scoreLookLike[_player2Score]}";
         }
 
