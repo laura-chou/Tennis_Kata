@@ -35,17 +35,21 @@ namespace Tennis
                 }
                 return "Deuce";
             }
+
             if (_player1Score >= 3 || _player2Score >= 3)
             {
-                var calcScore = Math.Abs(_player1Score - _player2Score);
+                var calcScoreResult = Math.Abs(_player1Score - _player2Score);
+                var winnerPlayerName = (_player1Score > _player2Score) ? _player1Name : _player2Name;
 
-                switch (calcScore)
+                Dictionary<int, string> scoreResultLookLike = new Dictionary<int, string>
                 {
-                    case 1:
-                        var advPlayerName = (_player1Score > _player2Score) ? _player1Name : _player2Name;
-                        return $"{advPlayerName} Advantage";
-                    case 2:
-                        return $"{_player1Name} Win";
+                    { 1, "Advantage"},
+                    { 2, "Win"}
+                };
+                
+                if (calcScoreResult < 3)
+                {
+                    return $"{winnerPlayerName} {scoreResultLookLike[calcScoreResult]}";
                 }
             }
             
