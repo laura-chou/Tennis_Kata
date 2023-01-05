@@ -29,7 +29,7 @@ namespace Tennis
         {
             if (IsDeuce())
             {
-                if (IsPlayer1ScoreZero())
+                if (IsPlayer1ScoreNotForty())
                 {
                     return _scoreLookLike[_player1Score] + " All";
                 }
@@ -61,9 +61,9 @@ namespace Tennis
             return _player1Score >= 3 || _player2Score >= 3;
         }
 
-        private bool IsPlayer1ScoreZero()
+        private bool IsPlayer1ScoreNotForty()
         {
-            return _player1Score == 0;
+            return _player1Score < 3;
         }
 
         private bool IsDeuce()
