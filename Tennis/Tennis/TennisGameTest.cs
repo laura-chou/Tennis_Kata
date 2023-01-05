@@ -110,6 +110,14 @@ namespace Tennis
             ResultShouldBeReturn("Player B Win");
         }
 
+        [Test]
+        public void A14_Fifteen_All()
+        {
+            GivenPlayer1ScoreTimes(1);
+            GivenPlayer2ScoreTimes(1);
+            ResultShouldBeReturn("Fifteen All");
+        }
+
         private void ResultShouldBeReturn(string result)
         {
             var actual = _tennis.GameResult();
