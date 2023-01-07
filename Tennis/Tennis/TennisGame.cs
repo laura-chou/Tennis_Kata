@@ -1,21 +1,24 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Tennis
 {
     public class TennisGame
     {
         private int _player1Score;
+        private Dictionary<int, string> _scoreLookLike = new Dictionary<int, string>
+        {
+            { 0, "Love" },
+            { 1, "Fifteen" },
+            { 2, "Thirty" }
+        };
         public string ScoreResult()
         {
             if (_player1Score > 0)
             {
-                if (_player1Score == 2)
-                {
-                    return "Thirty Love";
-                }
-                return "Fifteen Love";
+                return $"{_scoreLookLike[_player1Score]} Love"; 
             }
-            return "Love All";
+            return $"{_scoreLookLike[_player1Score]} All";
         }
 
         internal void GivePlayer1Score()
