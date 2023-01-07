@@ -13,5 +13,12 @@ namespace Tennis
             var actual = tennis.ScoreResult();
             actual.Should().Be("Love All");
         }
+        [Test]
+        public void A02_Fifteen_Love()
+        {
+            var tennis = new TennisGame();
+            var actual = tennis.ScoreResult();
+            actual.Should().Be("Fifteen Love");
+        }
     }
 }
