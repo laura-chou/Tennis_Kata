@@ -44,6 +44,7 @@ namespace Tennis
         [Test]
         public void A05_Love_Fifteen()
         {
+            GivePlayer2ScoreTimes(1);
             ScoreResultShouldReturn("Love Fifteen");
         }
 
@@ -58,6 +59,14 @@ namespace Tennis
             for (int i = 0; i < times; i++)
             {
                 _tennis.GivePlayer1Score();
+            }
+        }
+
+        private void GivePlayer2ScoreTimes(int times)
+        {
+            for (int i = 0; i < times; i++)
+            {
+                _tennis.GivePlayer2Score();
             }
         }
     }
