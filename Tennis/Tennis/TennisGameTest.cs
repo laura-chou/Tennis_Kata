@@ -70,6 +70,14 @@ namespace Tennis
             ScoreResultShouldReturn("Fifteen All");
         }
 
+        [Test]
+        public void A09_Thirty_All()
+        {
+            GivePlayer1ScoreTimes(2);
+            GivePlayer2ScoreTimes(2);
+            ScoreResultShouldReturn("Thirty All");
+        }
+
         private void ScoreResultShouldReturn(string expected)
         {
             var actual = _tennis.ScoreResult();
