@@ -27,10 +27,18 @@ namespace Tennis
         {
             if (_player1Score != _player2Score )
             {
-                if(_player1Score >= 3 && Math.Abs(_player1Score - _player2Score) == 1)
+                if(_player1Score >= 3)
                 {
-                    var advPlayerName = _player1Score > _player2Score ? _player1Name : _player2Name;
-                    return $"{advPlayerName} Advantage";
+                    var winnerName = _player1Score > _player2Score ? _player1Name : _player2Name;
+                    if (Math.Abs(_player1Score - _player2Score) == 1)
+                    {
+                        return $"{winnerName} Advantage";
+                    }
+                    else if (Math.Abs(_player1Score - _player2Score) == 2)
+                    {
+                        return $"{winnerName} Win";
+                    }
+
                 }
                 return $"{_scoreLookLike[_player1Score]} {_scoreLookLike[_player2Score]}"; 
             }
