@@ -7,6 +7,8 @@ namespace Tennis
     {
         private int _player1Score;
         private int _player2Score;
+        private readonly string _player1Name;
+        private readonly string _player2Name;
         private Dictionary<int, string> _scoreLookLike = new Dictionary<int, string>
         {
             { 0, "Love" },
@@ -14,11 +16,11 @@ namespace Tennis
             { 2, "Thirty" },
             { 3, "Forty" }
         };
-        private readonly string _player1Name;
 
-        public TennisGame(string player1Name)
+        public TennisGame(string player1Name, string player2Name)
         {
             _player1Name = player1Name;
+            _player2Name = player2Name;
         }
 
         public string ScoreResult()
@@ -27,7 +29,7 @@ namespace Tennis
             {
                 if(_player1Score >= 3 && Math.Abs(_player1Score - _player2Score) == 1)
                 {
-                    var advPlayerName = _player1Score > _player2Score ? _player1Name : "Player B";
+                    var advPlayerName = _player1Score > _player2Score ? _player1Name : _player2Name;
                     return $"{advPlayerName} Advantage";
                 }
                 return $"{_scoreLookLike[_player1Score]} {_scoreLookLike[_player2Score]}"; 
