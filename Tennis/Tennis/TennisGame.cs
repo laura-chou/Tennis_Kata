@@ -14,13 +14,20 @@ namespace Tennis
             { 2, "Thirty" },
             { 3, "Forty" }
         };
+        private readonly string _player1Name;
+
+        public TennisGame(string player1Name)
+        {
+            _player1Name = player1Name;
+        }
+
         public string ScoreResult()
         {
             if (_player1Score != _player2Score )
             {
                 if(_player1Score >= 3 && Math.Abs(_player1Score - _player2Score) == 1)
                 {
-                    return "Player A Advantage";
+                    return $"{_player1Name} Advantage";
                 }
                 return $"{_scoreLookLike[_player1Score]} {_scoreLookLike[_player2Score]}"; 
             }
