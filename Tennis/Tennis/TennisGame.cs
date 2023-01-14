@@ -30,15 +30,16 @@ namespace Tennis
                 if(_player1Score >= 3)
                 {
                     var winnerName = _player1Score > _player2Score ? _player1Name : _player2Name;
-                    if (Math.Abs(_player1Score - _player2Score) == 1)
+                    Dictionary<int, string> statusLookLike = new Dictionary<int, string>
                     {
-                        return $"{winnerName} Advantage";
-                    }
-                    else if (Math.Abs(_player1Score - _player2Score) == 2)
+                        { 1, "Advantage"},
+                        { 2, "Win"}
+                    };
+                    var scoreGap = Math.Abs(_player1Score - _player2Score);
+                    if (scoreGap < 3)
                     {
-                        return $"{winnerName} Win";
+                        return $"{winnerName} {statusLookLike[scoreGap]}";
                     }
-
                 }
                 return $"{_scoreLookLike[_player1Score]} {_scoreLookLike[_player2Score]}"; 
             }
