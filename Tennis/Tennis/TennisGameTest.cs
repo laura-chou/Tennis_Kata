@@ -26,6 +26,13 @@ namespace Tennis
             GameResultShouldReturn("Fifteen Love");
         }
 
+        [Test]
+        public void A03_Thirty_Love()
+        {
+            _tennis.GivePlayer1Score();
+            GameResultShouldReturn("Thirty Love");
+        }
+
         private void GameResultShouldReturn(string expected)
         {
             var actual = _tennis.GameResult();
