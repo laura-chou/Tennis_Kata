@@ -25,9 +25,9 @@ namespace Tennis
 
         public string ScoreResult()
         {
-            if (_player1Score != _player2Score )
+            if (IsDifferentScore())
             {
-                if(_player1Score >= 3)
+                if (_player1Score >= 3)
                 {
                     var winnerName = _player1Score > _player2Score ? _player1Name : _player2Name;
                     Dictionary<int, string> statusLookLike = new Dictionary<int, string>
@@ -41,13 +41,15 @@ namespace Tennis
                         return $"{winnerName} {statusLookLike[scoreGap]}";
                     }
                 }
-                return $"{_scoreLookLike[_player1Score]} {_scoreLookLike[_player2Score]}"; 
+                return $"{_scoreLookLike[_player1Score]} {_scoreLookLike[_player2Score]}";
             }
-            if (_player1Score >= 3)
-            {
-                return "Deuce";
-            }
-            return $"{_scoreLookLike[_player1Score]} All";
+
+            return _player1Score >= 3 ? "Deuce" : $"{_scoreLookLike[_player1Score]} All";
+        }
+
+        private bool IsDifferentScore()
+        {
+            return _player1Score != _player2Score;
         }
 
         internal void GivePlayer1Score()
