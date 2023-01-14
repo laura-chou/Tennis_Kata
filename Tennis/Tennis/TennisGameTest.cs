@@ -22,14 +22,14 @@ namespace Tennis
         [Test]
         public void A02_Fifteen_Love()
         {
-            _tennis.GivePlayer1Score();
+            _tennis.GivePlayer1ScoreTimes(1);
             GameResultShouldReturn("Fifteen Love");
         }
 
         [Test]
         public void A03_Thirty_Love()
         {
-            _tennis.GivePlayer1Score();
+            _tennis.GivePlayer1ScoreTimes(2);
             GameResultShouldReturn("Thirty Love");
         }
 
