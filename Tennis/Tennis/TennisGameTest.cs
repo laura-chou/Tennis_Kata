@@ -18,6 +18,7 @@ namespace Tennis
         public void A02_Fifteen_Love()
         {
             var tennis = new TennisGame();
+            tennis.GivePlayer1Score();
             var actual = tennis.GameResult();
             actual.Should().Be("Fifteen Love");
         }
