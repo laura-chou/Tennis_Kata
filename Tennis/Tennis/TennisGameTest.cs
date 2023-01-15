@@ -85,6 +85,14 @@ namespace Tennis
             GameResultShouldReturn("Deuce");
         }
 
+        [Test]
+        public void A11_Deuce_4vs4()
+        {
+            _tennis.GivePlayer1ScoreTimes(4);
+            _tennis.GivePlayer2ScoreTimes(4);
+            GameResultShouldReturn("Deuce");
+        }
+
         private void GameResultShouldReturn(string expected)
         {
             var actual = _tennis.GameResult();
