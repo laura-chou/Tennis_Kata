@@ -34,10 +34,18 @@ namespace Tennis
                 return $"{_scoreLookLike[_player1Score]} All";
             }
 
-            if (_player1Score >= 3 && Math.Abs(_player1Score - _player2Score) == 1)
+            if (_player1Score >= 3 && _player2Score >= 3)
             {
+                var scoreGap = Math.Abs(_player1Score - _player2Score);
                 var winnerName = _player1Score > _player2Score ? _player1Name : _player2Name;
-                return $"{winnerName} Advantage";
+                if (scoreGap == 1)
+                {
+                    return $"{winnerName} Advantage";
+                }
+                if (scoreGap == 2)
+                {
+                    return $"{winnerName} Win";
+                }
             }
 
             return $"{_scoreLookLike[_player1Score]} {_scoreLookLike[_player2Score]}";
