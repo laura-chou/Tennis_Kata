@@ -20,6 +20,11 @@ namespace Tennis
             {
                 return $"{_scoreLookLike[_player1Score]} {_scoreLookLike[_player2Score]}";
             }
+
+            if (_player1Score >= 3)
+            {
+                return "Deuce";
+            }
             return $"{_scoreLookLike[_player1Score]} All";
         }
 
