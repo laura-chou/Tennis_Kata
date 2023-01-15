@@ -43,6 +43,7 @@ namespace Tennis
         [Test]
         public void A05_Love_Fifteen()
         {
+            _tennis.GivePlayer2ScoreTimes(1);
             GameResultShouldReturn("Love Fifteen");
         }
 
