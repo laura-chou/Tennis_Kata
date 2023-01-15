@@ -60,12 +60,20 @@ namespace Tennis
             _tennis.GivePlayer2ScoreTimes(3);
             GameResultShouldReturn("Love Forty");
         }
+
         [Test]
         public void A08_Fifteen_All()
         {
             _tennis.GivePlayer1ScoreTimes(1);
             _tennis.GivePlayer2ScoreTimes(1);
             GameResultShouldReturn("Fifteen All");
+        }
+        [Test]
+        public void A09_Thirty_All()
+        {
+            _tennis.GivePlayer1ScoreTimes(2);
+            _tennis.GivePlayer2ScoreTimes(2);
+            GameResultShouldReturn("Thirty All");
         }
 
         private void GameResultShouldReturn(string expected)
