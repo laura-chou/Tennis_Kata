@@ -11,7 +11,7 @@ namespace Tennis
         [SetUp]
         public void SetUp()
         {
-            _tennis = new TennisGame("Player A");
+            _tennis = new TennisGame("Player A", "Player B");
         }
         [Test]
         public void A01_Love_All()
@@ -100,7 +100,6 @@ namespace Tennis
             _tennis.GivePlayer2ScoreTimes(4);
             GameResultShouldReturn("Player A Advantage");
         }
-
 
         [Test]
         public void A13_Player2_Advantage()
