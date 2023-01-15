@@ -109,6 +109,14 @@ namespace Tennis
             GameResultShouldReturn("Player B Advantage");
         }
 
+        [Test]
+        public void A14_Player1_Win()
+        {
+            _tennis.GivePlayer1ScoreTimes(5);
+            _tennis.GivePlayer2ScoreTimes(3);
+            GameResultShouldReturn("Player A Win");
+        }
+
         private void GameResultShouldReturn(string expected)
         {
             var actual = _tennis.GameResult();
